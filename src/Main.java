@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
         System.out.println("Hello and welcome!");
+        SingleLinkedList linkedList = new SingleLinkedList();
+        linkedList.insertAtEnd(10);
+        linkedList.insertAtEnd(20);
+        linkedList.insertAtEnd(30);
+        linkedList.insertAtEnd(40);
+        linkedList.insertAtEnd(50);
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        linkedList.traversing();
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+        linkedList.deleteLast();
+        linkedList.traversing();
+
+        linkedList.deleteLast();
+        linkedList.traversing();
+
+        linkedList.deleteLast();
+        linkedList.traversing();
+
+        linkedList.deleteLast();
+        linkedList.traversing();
+
+        linkedList.deleteLast();
+        linkedList.traversing();
+
+        linkedList.deleteLast();
+        linkedList.traversing();
     }
 }

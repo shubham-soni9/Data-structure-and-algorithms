@@ -2,27 +2,56 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello and welcome!");
-        SingleLinkedList linkedList = new SingleLinkedList();
-        linkedList.insertAtEnd(10);
-        linkedList.insertAtEnd(20);
-        linkedList.insertAtEnd(30);
-        linkedList.insertAtEnd(40);
-        linkedList.insertAtEnd(50);
+        DoubleLinkedList linkedList = new DoubleLinkedList();
 
-        linkedList.traversing();
-        linkedList.deleteAtPosition(2);
-        linkedList.traversing();
+        linkedList.insertAtBeginning(10);
+        linkedList.traverse();
+        linkedList.insertAtBeginning(9);
+        linkedList.traverse();
 
-        linkedList.deleteAtPosition(0);
-        linkedList.traversing();
+        linkedList.insertAtBeginning(8);
+        linkedList.traverse();
 
-        linkedList.deleteAtPosition(1);
-        linkedList.traversing();
+        linkedList.insertAtBeginning(7);
+        linkedList.traverse();
 
-        linkedList.deleteAtPosition(0);
-        linkedList.traversing();
+        linkedList.insertAtBeginning(6);
+        linkedList.traverse();
 
-        linkedList.deleteAtPosition(0);
-        linkedList.traversing();
+        linkedList.insertAtBeginning(5);
+        linkedList.traverse();
+
+        linkedList.insertAtEnd(11);
+        linkedList.traverse();
+
+        linkedList.insertAtEnd(12);
+        linkedList.traverse();
+
+        linkedList.insertAtEnd(14);
+        linkedList.traverse();
+
+        linkedList.insertAtEnd(16);
+        linkedList.traverse();
+
+        linkedList.insertAtPosition(40,2);
+        linkedList.traverse();
+
+        linkedList.deleteFromBeginning();
+        linkedList.traverse();
+
+        linkedList.deleteFromBeginning();
+        linkedList.traverse();
+
+        linkedList.deleteFromBeginning();
+        linkedList.traverse();
+
+        linkedList.deleteFromBeginning();
+        linkedList.traverse();
+
+        linkedList.deleteFromBeginning();
+        linkedList.traverse();
+
+        linkedList.deleteFromEnd();
+        linkedList.traverse();
     }
 }

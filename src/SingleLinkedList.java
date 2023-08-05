@@ -32,6 +32,34 @@ public class SingleLinkedList {
         }
     }
 
+    public void insertAtPosition(int data, int position) {
+        if (position < 0) {
+            System.out.println("Invalid Position");
+            return;
+        }
+        if (head == null) {
+            if (position > 0) {
+                System.out.println("Invalid Position");
+            } else {
+                head = new Node(data, null);
+            }
+        } else {
+            if (position == 0) {
+                insertAtBeginning(data);
+            } else {
+                int count = 0;
+                Node temp = head;
+                Node prev = temp;
+                while (temp != null && count < position) {
+                    prev = temp;
+                    temp = temp.next;
+                    count++;
+                }
+                prev.next = new Node(data, temp);
+            }
+        }
+    }
+
     public void deleteFirst() {
         if (head == null) {
             System.out.println("Delete First Empty");
@@ -55,6 +83,30 @@ public class SingleLinkedList {
                     temp = temp.next;
                 }
                 prev.next = null;
+            }
+        }
+    }
+
+    public void deleteAtPosition(int position) {
+        Node temp = head;
+        if (head == null) {
+            System.out.println("Delete Empty");
+        } else {
+            if (position < 0) {
+                System.out.println("Invalid Position");
+            } else {
+                if (position == 0) {
+                    head = head.next;
+                } else {
+                    int count = 0;
+                    Node prev = temp;
+                    while (temp.next != null && count < position) {
+                        count++;
+                        prev =temp;
+                        temp =temp.next;
+                    }
+                    prev.next =temp.next;
+                }
             }
         }
     }

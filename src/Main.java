@@ -10,23 +10,19 @@ public class Main {
         linkedList.insertAtEnd(50);
 
         linkedList.traversing();
-
-        linkedList.deleteLast();
+        linkedList.deleteAtPosition(2);
         linkedList.traversing();
 
-        linkedList.deleteLast();
+        linkedList.deleteAtPosition(0);
         linkedList.traversing();
 
-        linkedList.deleteLast();
+        linkedList.deleteAtPosition(1);
         linkedList.traversing();
 
-        linkedList.deleteLast();
+        linkedList.deleteAtPosition(0);
         linkedList.traversing();
 
-        linkedList.deleteLast();
-        linkedList.traversing();
-
-        linkedList.deleteLast();
+        linkedList.deleteAtPosition(0);
         linkedList.traversing();
     }
 }

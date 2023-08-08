@@ -1,7 +1,32 @@
 
 public class Main {
     public static void main(String[] args) {
+        MyGraph<Character> firstGraph = createGraph();
+        GraphPrograms.traverseDFS(firstGraph, 'F');
+
+        System.out.print("\nTraversing Graph Recursive:");
+        GraphPrograms.traverseDFSRecursive(firstGraph, 'F');
+
+        GraphPrograms.traverseBFS(firstGraph, 'F');
+
+        boolean isPath = GraphPrograms.hasPathIterative(firstGraph, 'F', 'K');
+        System.out.println("\nPath Available: " + isPath);
+
+        isPath = GraphPrograms.hasPathRecursive(firstGraph, 'F', 'K');
+        System.out.println("Path Available: " + isPath);
     }
+
+    private static MyGraph<Character> createGraph() {
+        MyGraph<Character> myGraph = new MyGraph<>();
+        myGraph.addEdge('F', 'G');
+        myGraph.addEdge('F', 'I');
+        myGraph.addEdge('G', 'H');
+        myGraph.addEdge('I', 'K');
+        myGraph.addEdge('I', 'G');
+        myGraph.addEdge('J', 'I');
+        return myGraph;
+    }
+
 
     private static void textNumberTree() {
         BinaryTree<Integer> numberRoot = createNumberTree();

@@ -14,6 +14,10 @@ public class MyGraph<T> {
         return verticesMap.containsKey(v);
     }
 
+    public Set<T> getEdges(T v){
+        return verticesMap.get(v);
+    }
+
     public void addVertex(T v) {
         verticesMap.put(v, new HashSet<>());
     }
@@ -22,6 +26,5 @@ public class MyGraph<T> {
         if (!hasVertex(v)) addVertex(v);
         if (!hasVertex(w)) addVertex(w);
         verticesMap.get(v).add(w);
-        verticesMap.get(w).add(v);
     }
 }

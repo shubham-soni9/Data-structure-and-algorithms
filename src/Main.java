@@ -1,57 +1,22 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello and welcome!");
-        DoubleLinkedList linkedList = new DoubleLinkedList();
+        BinaryTree<Character> root = createTree();
+    }
 
-        linkedList.insertAtBeginning(10);
-        linkedList.traverse();
-        linkedList.insertAtBeginning(9);
-        linkedList.traverse();
+    private static BinaryTree<Character> createTree() {
+        BinaryTree<Character> root = new BinaryTree<>('A');
+        BinaryTree<Character> nodeB = new BinaryTree<>('B');
+        BinaryTree<Character> nodeC = new BinaryTree<>('C');
+        BinaryTree<Character> nodeD = new BinaryTree<>('D');
+        BinaryTree<Character> nodeE = new BinaryTree<>('E');
+        BinaryTree<Character> nodeF = new BinaryTree<>('F');
 
-        linkedList.insertAtBeginning(8);
-        linkedList.traverse();
-
-        linkedList.insertAtBeginning(7);
-        linkedList.traverse();
-
-        linkedList.insertAtBeginning(6);
-        linkedList.traverse();
-
-        linkedList.insertAtBeginning(5);
-        linkedList.traverse();
-
-        linkedList.insertAtEnd(11);
-        linkedList.traverse();
-
-        linkedList.insertAtEnd(12);
-        linkedList.traverse();
-
-        linkedList.insertAtEnd(14);
-        linkedList.traverse();
-
-        linkedList.insertAtEnd(16);
-        linkedList.traverse();
-
-        linkedList.insertAtPosition(40,2);
-        linkedList.traverse();
-
-        linkedList.deleteFromBeginning();
-        linkedList.traverse();
-
-        linkedList.deleteFromBeginning();
-        linkedList.traverse();
-
-        linkedList.deleteFromBeginning();
-        linkedList.traverse();
-
-        linkedList.deleteFromBeginning();
-        linkedList.traverse();
-
-        linkedList.deleteFromBeginning();
-        linkedList.traverse();
-
-        linkedList.deleteFromEnd();
-        linkedList.traverse();
+        nodeB.left = nodeD;
+        nodeB.right = nodeE;
+        nodeC.right = nodeF;
+        root.left = nodeB;
+        root.right = nodeC;
+        return root;
     }
 }

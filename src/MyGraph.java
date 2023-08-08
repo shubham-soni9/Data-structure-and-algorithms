@@ -14,6 +14,9 @@ public class MyGraph<T> {
         return verticesMap.containsKey(v);
     }
 
+    public Set<Map.Entry<T, Set<T>>> getEntrySet(){
+        return verticesMap.entrySet();
+    }
     public Set<T> getEdges(T v){
         return verticesMap.get(v);
     }
@@ -26,5 +29,6 @@ public class MyGraph<T> {
         if (!hasVertex(v)) addVertex(v);
         if (!hasVertex(w)) addVertex(w);
         verticesMap.get(v).add(w);
+        verticesMap.get(w).add(v);
     }
 }

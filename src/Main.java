@@ -4,8 +4,16 @@ public class Main {
     public static void main(String[] args) {
         MyGraph<Character> firstGraph = createGraph();
 
-        int shortestPath = GraphPrograms.getShortestPath(firstGraph, 'W', 'Z');
-        System.out.println("Shorted Path is " + shortestPath);
+        Character[][] grid = {
+                {'W', 'L', 'W', 'W', 'W'},
+                {'W', 'L', 'W', 'W', 'W'},
+                {'W', 'W', 'W', 'L', 'W'},
+                {'W', 'W', 'L', 'L', 'W'},
+                {'L', 'W', 'W', 'L', 'L'},
+                {'L', 'L', 'W', 'W', 'W'}
+        };
+        int shortestPath = GraphPrograms.islandCountProblem(grid);
+        System.out.println("Island Count is " + shortestPath);
     }
 
     private static MyGraph<Character> createGraph() {

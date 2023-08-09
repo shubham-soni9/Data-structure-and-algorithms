@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class GraphPrograms {
+public class GraphPrograms<T> {
 
     public static <T> void traverseDFS(MyGraph<T> graph, T source) {
         System.out.print("Traversing DFS Graph Iterative:");
@@ -157,5 +157,41 @@ public class GraphPrograms {
         }
 
         return 0;
+    }
+
+    private static HashSet<String> visited;
+
+    public static <T> int islandCountProblem(Character[][] grid) {
+        visited = new HashSet<>();
+        int islandCount = 0;
+        int row = grid.length;
+        int column = grid[0].length;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                String key = i + "," + j;
+                if (grid[i][j] == 'L') {
+                    if (!visited.contains(key)) {
+                        islandDFS(grid, i, j, row, column);
+                        islandCount++;
+                    }
+                }
+            }
+        }
+
+        return islandCount;
+    }
+
+    private static <T> void islandDFS(Character[][] grid, int i, int j, int row, int column) {
+        if (i < 0 || j < 0) return;
+        if (i >= row || j >= column) return;
+        if(grid[i][j] == 'W') return;
+        String key = i + "," + j;
+        if(visited.contains(key)) return;
+        visited.add(key);
+
+        islandDFS(grid, i + 1, j, row, column);
+        islandDFS(grid, i - 1, j, row, column);
+        islandDFS(grid, i, j + 1, row, column);
+        islandDFS(grid, i, j - 1, row, column);
     }
 }

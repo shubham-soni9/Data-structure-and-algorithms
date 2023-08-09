@@ -1,19 +1,17 @@
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        MyGraph<Character> firstGraph = createGraph();
+        int ans = DynamicPrograms.getFinonacci(50, new HashMap<>());
+        System.out.println("Fibonacci of " + ans);
 
-        Character[][] grid = {
-                {'W', 'L', 'W', 'W', 'W'},
-                {'W', 'L', 'W', 'W', 'W'},
-                {'W', 'W', 'W', 'L', 'W'},
-                {'W', 'W', 'L', 'L', 'W'},
-                {'L', 'W', 'W', 'L', 'L'},
-                {'L', 'L', 'W', 'W', 'W'}
-        };
-        int shortestPath = GraphPrograms.islandCountProblem(grid);
-        System.out.println("Island Count is " + shortestPath);
+        int pathCount = DynamicPrograms.gridTraveller(10, 10, new HashMap<>());
+        System.out.println("How many path " + pathCount);
+
+        int values[] = {2,4};
+        boolean canSum = DynamicPrograms.canSum(7, values,new HashMap<>());
+        System.out.println("Can Sum Possible is " + canSum);
     }
 
     private static MyGraph<Character> createGraph() {
